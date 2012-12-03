@@ -14,3 +14,4 @@ httest: httest.cpp Entry.o HashTable.o
 
 clean:
 	rm -f *.o
+	rm -f httest
