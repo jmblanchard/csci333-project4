@@ -2,4 +2,4 @@ CSCI333 Project 4
 Simple implementation of a hash table.
 Hash is simply calculated by taking key and adding together ASCII values
 of each character, then modding by the size of the table in which
-the has will index.
+the hash will index.
