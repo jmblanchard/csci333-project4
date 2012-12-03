@@ -61,7 +61,17 @@ bool HashTable<T>::find(std::string key, T &value) {
 template <typename T>
 void HashTable<T>::remove(std::string key) {
     int hash = computeHash(key);
-    hash=hash;
+    assert(hash < TABLE_SIZE);
+
+    typename std::list<Entry<T> *>::iterator it;
+    if (!table_[hash]->empty()) {
+        for (it = table_[hash]->begin(); it != table_[hash]->end(); ++it) {
+            if (((Entry<T>*)*it)->getKey().compare(key) == 0) {
+                table_[hash]->erase(it);
+                break;
+            }
+        }
+    }
 }
 
 template <typename T>
